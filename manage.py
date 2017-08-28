@@ -17,9 +17,10 @@ def get():
     return 'test for get!'
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['get', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        return 'sucess'
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
