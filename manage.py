@@ -22,15 +22,10 @@ def get():
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
-        img = file.stream.read()
-        f = open('cc.jpg', 'wb')
-        f.write(img)
-        f.closed()
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('upload_file',
-                                    filename=filename))
+            return 'success'
     return '''
     <!doctype html>
     <title>Upload new File</title>
