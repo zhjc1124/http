@@ -18,7 +18,7 @@ def get():
     return 'test for get!'
 
 
-@app.route('/', methods=['get', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
