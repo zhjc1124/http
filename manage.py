@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, url_for, redirect
 from werkzeug.utils import secure_filename
 import os
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
