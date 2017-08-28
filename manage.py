@@ -1,10 +1,11 @@
 from flask import Flask, request
 from werkzeug.utils import secure_filename
 import os
-UPLOAD_FOLDER = '/path/to/the/uploads'
+UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def allowed_file(filename):
@@ -20,7 +21,6 @@ def get():
 @app.route('/', methods=['get', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        return 'sucess'
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
