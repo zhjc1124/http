@@ -12,6 +12,11 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route('/get')
+def get():
+    return 'test for get!'
+
+
 @app.route('/image', methods=['POST'])
 def upload():
     upload_file = request.files['image01']
