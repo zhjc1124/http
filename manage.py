@@ -27,7 +27,7 @@ def upload_file():
         #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #     return 'success'
         # else:
-        return request.data
+        return 'success'
     return '''
     <!doctype html>
     <title>Upload new File</title>
