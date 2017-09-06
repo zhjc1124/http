@@ -21,7 +21,7 @@ def get():
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        print(request.data,request.stream, request.form, request.files, request.files['the_file'])
+        print(request.files, request.stream.read())
         return 'success'
     return '''
     <!doctype html>
