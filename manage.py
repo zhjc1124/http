@@ -22,13 +22,6 @@ def get():
 def upload_file():
     if request.method == 'POST':
         return 'success'
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return 'get photo'
-        else:
-            return 'success'
     return '''
     <!doctype html>
     <title>Upload new File</title>
