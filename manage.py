@@ -22,7 +22,7 @@ def get():
 def upload_file():
     if request.method == 'POST':
         print(request.form, request.stream.read(), request.files)
-        file = request.files['file1']
+        file = request.files['file']
         file.save('test.jpg')
         return 'success'
     return '''
