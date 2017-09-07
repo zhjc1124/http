@@ -1,6 +1,6 @@
 import requests
 post_url = 'http://123.206.16.144'
-data = {'username': 'qwerty', 'password': 'zxcvbn'}
+data = {'username': 'qwerty', 'password': '00000000'}
 
 
 img = {'file': open('test.jpg', 'rb')}
