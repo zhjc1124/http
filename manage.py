@@ -21,7 +21,6 @@ def get():
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    base = os.getcwd()
     if request.method == 'POST':
         print(request.form)
         file = request.files['file']
@@ -29,15 +28,15 @@ def upload_file():
         opc.split()
         return '''
         <!doctype html>
-        <img src="%s/1.jpg" />
-        <img src="%s/2.jpg" />
-        <img src="%s/3.jpg" />
-        <img src="%s/4.jpg" />
-        <img src="%s/5.jpg" />
-        <img src="%s/6.jpg" />
-        <img src="%s/7.jpg" />
-        <img src="%s/8.jpg" />
-        ''' % tuple([base]*8)
+        <img src="1.jpg" />
+        <img src="2.jpg" />
+        <img src="3.jpg" />
+        <img src="4.jpg" />
+        <img src="5.jpg" />
+        <img src="6.jpg" />
+        <img src="7.jpg" />
+        <img src="8.jpg" />
+        '''
     return '''
     <!doctype html>
     <title>Upload new File</title>
