@@ -1,12 +1,6 @@
 # -*- coding: utf8-*-
-import os
 import cv2
-import math
-from PIL import Image
-from pylab import *
 from numpy import *
-from matplotlib import pyplot as plt
-from matplotlib import cm #从包中导入模块
 
 #车牌去除边框
 def border_segment(src):
