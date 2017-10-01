@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import imtools
 import detect_plate
+
 def split():
     img=cv2.imread('test.jpg')
     #img=cv2.imread('C:\Users\Administrator\Desktop\VC++数字图像处理\图像库\plate picture_jpg\Level_1\初出茅庐003.jpg')

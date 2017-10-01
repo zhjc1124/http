@@ -28,15 +28,15 @@ def upload_file():
         opc.split()
         return '''
         <!doctype html>
-        <img src="./1.jpg" />
-        <img src="./2.jgp" />
-        <img src="./3.jgp" />
-        <img src="./4.jgp" />
-        <img src="./5.jgp" />
-        <img src="./6.jgp" />
-        <img src="./7.jgp" />
-        <img src="./8.jgp" />
-        '''
+        <img src="%s/1.jpg" />
+        <img src="%s/2.jpg" />
+        <img src="%s/3.jpg" />
+        <img src="%s/4.jpg" />
+        <img src="%s/5.jpg" />
+        <img src="%s/6.jpg" />
+        <img src="%s/7.jpg" />
+        <img src="%s/8.jpg" />
+        ''' % (os.getcwd(),)*8
     return '''
     <!doctype html>
     <title>Upload new File</title>
