@@ -103,7 +103,7 @@ def get_single_char(src):
         for y in xrange(h):
             if src[y,x]==255:count+=1
         pixels.append(count)
-    print pixels #打印所有列像素值为255的点数
+    # print pixels #打印所有列像素值为255的点数
     for x in xrange(w):#寻找第一个汉字
         count=0
         for y in xrange(h):
@@ -114,7 +114,7 @@ def get_single_char(src):
         if flag and count<threshlod1:
             R=x
             if R-L > threshlod2:break
-    print L,R
+    # print L,R
     '''for y in xrange(h):
         src[y,L]=255
         src[y,R]=255'''
@@ -129,13 +129,13 @@ def get_single_char(src):
         if not flag and count>threshlod1:
             xx1=x
             Lborder.append(xx1)
-            print 'L:%s,count:%s' % (xx1,count)
+            # print 'L:%s,count:%s' % (xx1,count)
             flag=True
         if flag and count<threshlod1:
             if x-xx1>threshlod2:
                 xx2=x
                 Rborder.append(xx2)
-                print 'R:%s,count:%s' % (xx2,count)
+                # print 'R:%s,count:%s' % (xx2,count)
                 flag=False
     for y in xrange(h):
         for x in Lborder:
@@ -144,7 +144,7 @@ def get_single_char(src):
             src[y,x]=0
     #如果没有判断出最后一条边界，则将右边界加入到列表中
     if len(Rborder)<len(Lborder):Rborder.append(w-1)
-    print Lborder,Rborder
+    # print Lborder,Rborder
     #字符归一化处理，5*10的尺寸
     char=[]#存储每个归一化后的图像列表
     char1=src[:,L:R]

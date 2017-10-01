@@ -28,14 +28,14 @@ def upload_file():
         opc.split()
         return '''
         <!doctype html>
-        <img src="./1.img" />
-        <img src="./2.img" />
-        <img src="./3.img" />
-        <img src="./4.img" />
-        <img src="./5.img" />
-        <img src="./6.img" />
-        <img src="./7.img" />
-        <img src="./8.img" />
+        <img src="./1.jpg" />
+        <img src="./2.jgp" />
+        <img src="./3.jgp" />
+        <img src="./4.jgp" />
+        <img src="./5.jgp" />
+        <img src="./6.jgp" />
+        <img src="./7.jgp" />
+        <img src="./8.jgp" />
         '''
     return '''
     <!doctype html>

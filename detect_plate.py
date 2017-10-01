@@ -47,8 +47,8 @@ def findPlateNumberRegion(img):
 
         # 找到最小的矩形，该矩形可能有方向
         rect = cv2.minAreaRect(cnt)
-        print "rect is: "
-        print rect
+        # print "rect is: "
+        # print rect
 
         # box是四个点的坐标
         box = cv2.cv.BoxPoints(rect)
@@ -59,7 +59,7 @@ def findPlateNumberRegion(img):
         width = abs(box[0][0] - box[2][0])
         # 车牌正常情况下长高比在2.7-5之间
         ratio =float(width) / float(height)
-        print ratio
+        # print ratio
         if (ratio > 5 or ratio < 2):
             continue
         region.append(box)
