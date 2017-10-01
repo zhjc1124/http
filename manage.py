@@ -21,6 +21,7 @@ def get():
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
+    base = os.getcwd()
     if request.method == 'POST':
         print(request.form)
         file = request.files['file']
@@ -36,7 +37,7 @@ def upload_file():
         <img src="%s/6.jpg" />
         <img src="%s/7.jpg" />
         <img src="%s/8.jpg" />
-        ''' % (os.getcwd(),)*8
+        ''' % tuple([base]*8)
     return '''
     <!doctype html>
     <title>Upload new File</title>
