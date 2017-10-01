@@ -1,6 +1,7 @@
 from flask import Flask, request, url_for, redirect
 from werkzeug.utils import secure_filename
 import os
+import opc
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -24,7 +25,18 @@ def upload_file():
         print(request.form)
         file = request.files['file']
         file.save('test.jpg')
-        return 'success'
+        opc.split()
+        return '''
+        <!doctype html>
+        <img src="./1.img" />
+        <img src="./2.img" />
+        <img src="./3.img" />
+        <img src="./4.img" />
+        <img src="./5.img" />
+        <img src="./6.img" />
+        <img src="./7.img" />
+        <img src="./8.img" />
+        '''
     return '''
     <!doctype html>
     <title>Upload new File</title>
