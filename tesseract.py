@@ -7,6 +7,8 @@ def to_string(filename):
     lang = 'eng'
     if filename == '1':
         lang = 'chi_sim'
+    char = image_to_string(image, lang=lang, config='-psm 8')
+    print(char)
     return image_to_string(image, lang=lang, config='-psm 8')
 
 
