@@ -1,6 +1,7 @@
 from flask import Flask, request, url_for, redirect
 from werkzeug.utils import secure_filename
 import os
+from tesseract import to_string
 import opc
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -26,17 +27,10 @@ def upload_file():
         file = request.files['file']
         file.save('test.jpg')
         opc.split()
-        return '''
-        <!doctype html>
-        <img src="1.jpg" />
-        <img src="2.jpg" />
-        <img src="3.jpg" />
-        <img src="4.jpg" />
-        <img src="5.jpg" />
-        <img src="6.jpg" />
-        <img src="7.jpg" />
-        <img src="8.jpg" />
-        '''
+        result = ''
+        for i in range(1, 9):
+            result += to_string(str(i))
+        return result
     return '''
     <!doctype html>
     <title>Upload new File</title>
