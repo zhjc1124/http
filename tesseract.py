@@ -1,5 +1,5 @@
 from pytesseract import image_to_string
-import Image
+from PIL import Image
 
 
 def to_string(filename):
