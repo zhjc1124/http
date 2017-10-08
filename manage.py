@@ -23,7 +23,9 @@ def get():
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        print(request.form)
+        keys = ['Username', '\xac\xa6', '\xcf\xa6']
+        for key in keys:
+            print(key, request.form[key])
         file = request.files['file']
         file.save('test.jpg')
         opc.split()
