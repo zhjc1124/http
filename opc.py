@@ -6,7 +6,7 @@ import detect_plate
 
 def split():
     img=cv2.imread('test.jpg')
-    plate = detect_plate.colorDetect(img)
+    plate = detect_plate.detect(img)
     #开始下一步，进行字符分割
     plate=cv2.resize(plate,None,fx=2,fy=2) #放大两倍
     cv2.imshow('2',plate)
@@ -55,6 +55,6 @@ def split():
 
 
 if __name__ == '__main__':
-    img = cv2.imread('./src/1.jpg')
+    img = cv2.imread('ccc.jpg')
     cv2.imwrite('test.jpg', img)
     split()
