@@ -94,6 +94,7 @@ def border_segment(src):
 def get_single_char(src):
     w=src.shape[1]
     h=src.shape[0]
+    L, R = 0, 0
     flag=False
     pixels=[]
     threshlod1=4#白色点数阈值，大于阈值为字符开始列，小于为字符结束列

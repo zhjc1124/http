@@ -6,12 +6,11 @@ import detect_plate
 
 def split():
     img=cv2.imread('test.jpg')
-    #img=cv2.imread('C:\Users\Administrator\Desktop\VC++数字图像处理\图像库\plate picture_jpg\Level_1\初出茅庐003.jpg')
-    plate = detect_plate.detect(img)
+    plate = detect_plate.colorDetect(img)
     #开始下一步，进行字符分割
     plate=cv2.resize(plate,None,fx=2,fy=2) #放大两倍
-    # cv2.imshow('2',plate)
-    # cv2.waitKey(0)
+    cv2.imshow('2',plate)
+    cv2.waitKey(0)
     ret,img_binary=cv2.threshold(plate,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     #print 'img_binary-1:',img_binary[10,:]
     # print plate.shape
@@ -54,3 +53,8 @@ def split():
     img_border=imtools.border_segment(img_binary)
     char=imtools.get_single_char(img_border)
 
+
+if __name__ == '__main__':
+    img = cv2.imread('./src/1.jpg')
+    cv2.imwrite('test.jpg', img)
+    split()
