@@ -23,9 +23,9 @@ def preprocess(gray):
     erosion = cv2.erode(dilation, element1, iterations = 1)
     # 再次膨胀，让轮廓明显一些
     dilation2 = cv2.dilate(erosion, element2,iterations = 3)
-    cv2.imshow('dilation2',dilation2)
-    cv2.imwrite('dilation2.jpg',dilation2)
-    cv2.waitKey(0)
+    # cv2.imshow('dilation2',dilation2)
+    # cv2.imwrite('dilation2.jpg',dilation2)
+    # cv2.waitKey(0)
     return dilation2
 
 def findPlateNumberRegion(img):
@@ -93,17 +93,17 @@ def detect(img):
     img_plate = img_org2[y1:y2, x1:x2]
     img_plate = cv2.cvtColor(img_plate,cv2.COLOR_BGR2GRAY)
 
-    cv2.imshow('number plate', img_plate)
-    cv2.imwrite('number_plate.jpg', img_plate)
-
-    cv2.namedWindow('img', cv2.WINDOW_NORMAL)
-    cv2.imshow('img', img)
-
-    # 带轮廓的图片
-    cv2.imwrite('contours.png', img)
-
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.imshow('number plate', img_plate)
+    # cv2.imwrite('number_plate.jpg', img_plate)
+    #
+    # cv2.namedWindow('img', cv2.WINDOW_NORMAL)
+    # cv2.imshow('img', img)
+    #
+    # # 带轮廓的图片
+    # cv2.imwrite('contours.png', img)
+    #
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
     return img_plate
 
 
