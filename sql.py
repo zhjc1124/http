@@ -8,9 +8,8 @@ connection = pymysql.connect(host='127.0.0.1',
                              charset='utf8')
 
 
-def save_info(values):
+def save_info(username, lng, lat, location):
     with connection.cursor() as cursor:
         sql = 'INSERT INTO info(username, lng, lat, location) VALUES (%s, %s, %s, %s)'
-        print sql % values
-        cursor.execute(sql, values)
+        cursor.execute(sql, (username, lng, lat, location))
         connection.commit()

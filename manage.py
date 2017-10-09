@@ -26,9 +26,11 @@ def get():
 def upload_file():
     if request.method == 'POST':
         print request.form
-        keys = ['Username', '\xac\xa6', '\xcf\xa6', '0@']
-        values = [urllib.unquote(request.form[key]).decode('utf8') for key in keys]
-        save_info(values)
+        username = request.form['Username']
+        lng = request.form['\xac\xa6']
+        lat = request.form['\xcf\xa6']
+        location = urllib.unquote(request.form['0@']).decode('utf8')
+        save_info(username, lng, lat, location)
         file = request.files['file']
         file.save('test.jpg')
         opc.split()
