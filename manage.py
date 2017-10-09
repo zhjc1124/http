@@ -4,6 +4,7 @@ import os
 from tesseract import to_string
 import opc
 from sql import save_info
+import urllib
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -25,9 +26,9 @@ def get():
 def upload_file():
     if request.method == 'POST':
         print request.form
-        keys = ['Username', '\xac\xa6', '\xcf\xa6']
-        for key in keys:
-            print(key, request.form[key])
+        keys = ['Username', '\xac\xa6', '\xcf\xa6', '0@']
+        values = [urllib.unquote(request.form[key]).decode('utf8') for key in keys]
+        save_info(values)
         file = request.files['file']
         file.save('test.jpg')
         opc.split()
