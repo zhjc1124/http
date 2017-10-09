@@ -29,7 +29,7 @@ def upload_file():
         username = request.form['Username']
         lng = request.form['\xac\xa6']
         lat = request.form['\xcf\xa6']
-        location = urllib.unquote(request.form['0@']).encode('utf8').decode('gbk')
+        location = urllib.unquote(request.form['0@'])
         save_info(username, lng, lat, location)
         file = request.files['file']
         file.save('test.jpg')
