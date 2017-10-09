@@ -11,5 +11,6 @@ connection = pymysql.connect(host='127.0.0.1',
 def save_info(values):
     with connection.cursor() as cursor:
         sql = 'INSERT INTO info(username, lng, lat, location) VALUES (%s, %s, %s, %s)'
+        print sql % values
         cursor.execute(sql, values)
         connection.commit()
