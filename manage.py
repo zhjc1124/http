@@ -5,6 +5,7 @@ from tesseract import to_string
 import opc
 from sql import save_info
 import urllib
+
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -26,10 +27,10 @@ def get():
 def upload_file():
     if request.method == 'POST':
         print request.form
-        username = request.form['Username']
-        lng = request.form['\xac\xa6']
-        lat = request.form['\xcf\xa6']
-        location = urllib.unquote(request.form['0@']).encode('latin1')
+        username = base64.b64encode(request.form['Username'])
+        lng = base64.b64encode(urllib.unquote(request.form['\xac\xa6']))
+        lat = base64.b64encode(request.form['\xcf\xa6'])
+        location = base64.b64encode(urllib.unquote(request.form['0@']).encode('latin1'))
         save_info(username, lng, lat, location)
         file = request.files['file']
         file.save('test.jpg')
