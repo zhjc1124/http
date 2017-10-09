@@ -1,3 +1,4 @@
+# -*- coding: utf8-*-
 from flask import Flask, request, url_for, redirect
 from werkzeug.utils import secure_filename
 import os
@@ -5,7 +6,7 @@ from tesseract import to_string
 import opc
 from sql import save_info
 import urllib
-
+import base64
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
