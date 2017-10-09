@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 from tesseract import to_string
 import opc
+from sql import save_info
 UPLOAD_FOLDER = '/home/ubuntu/http/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -23,6 +24,7 @@ def get():
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        print request.form
         keys = ['Username', '\xac\xa6', '\xcf\xa6']
         for key in keys:
             print(key, request.form[key])

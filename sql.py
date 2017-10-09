@@ -6,7 +6,10 @@ connection = pymysql.connect(host='127.0.0.1',
                              password='zhang19981124',
                              db='http',
                              charset='utf8')
-with connection.cursor() as cursor:
-    sql = 'INSERT INTO info(username, lng, lat, location) VALUES (%s, %s, %s, %s)'
-    cursor.execute(sql, ('lc', 43, 45.3, '122233'))
-    connection.commit()
+
+
+def save_info(username, lng, lat, location):
+    with connection.cursor() as cursor:
+        sql = 'INSERT INTO info(username, lng, lat, location) VALUES (%s, %s, %s, %s)'
+        cursor.execute(sql, (username, lng, lat, location))
+        connection.commit()
